@@ -120,9 +120,9 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit ajouter le nombre 1 à chaque élément du tableau.
 // Exemple : [1, 2, 3] => [2, 3, 4]
 
-// export const incrementArray = () => {};
+export const incrementArray = (array) => array.map((a) => a + 1 );
 
-// console.log(`Exercice 11 : `, incrementArray([1, 2, 3]));
+console.log(`Exercice 11 : `, incrementArray([1, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 12
@@ -130,9 +130,9 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec la longueur de chaque string.
 // Exemple : ["Hello", "World"] => [5, 5]
 
-// export const getLengths = () => {};
+export const getLengths = (array) => array.map((a) => a.length);
 
-// console.log(`Exercice 12 : `, getLengths(["Hello", "World"]));
+console.log(`Exercice 12 : `, getLengths(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 13
@@ -140,9 +140,9 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les premières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["H", "W"]
 
-// export const getFirstLetters = () => {};
+export const getFirstLetters = (array) => array.map((a) => a[0]);
 
-// console.log(`Exercice 13 : `, getFirstLetters(["Hello", "World"]));
+console.log(`Exercice 13 : `, getFirstLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 14
@@ -150,9 +150,9 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner un tableau avec toutes les dernières lettres de chaque string.
 // Exemple : ["Hello", "World"] => ["o", "d"]
 
-// export const getLastLetters = () => {};
+export const getLastLetters = (array) => array.map((a) => [...a].reverse().join("")[0]);
 
-// console.log(`Exercice 14 : `, getLastLetters(["Hello", "World"]));
+console.log(`Exercice 14 : `, getLastLetters(["Hello", "World"]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 15
@@ -160,22 +160,32 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit renvoyer tout les string qui ont une longueur de 5 caractères ou plus.
 // Exemple : ["Hello", "World","Test", "Salut", "Yo"] => ["Hello", "World", "Salut"]
 
-// export const filterLongStrings = () => {};
+export const filterLongStrings = (array) => {
+    const result = []
 
-// console.log(
-// 	`Exercice 15 : `,
-// 	filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"]),
-// );
+    array.map((a) => {
+        if (a.length >= 5 ){
+            result.push(a)
+        }
+    })
+
+    return result
+};
+
+console.log(
+	`Exercice 15 : `,
+	filterLongStrings(["Hello", "World", "Test", "Salut", "Yo"]),
+);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 16
 
-// Ajuste la fonction qui prend en paramètre un tableau de nombre et qui doit retourner la somme de tout les nombres du tableau.
-// Exemple : [1, 2, 3] => 6
+// Ajuste la fonction qui prend une chaîne de caractères en format snake_case et doit retourner une nouvelle chaîne de caractères contenant les mêmes mots, mais sans les underscores.
+// Exemple : "Bonjour_c'est_papy" => "bonjour c'est papy" 
 
-// export const sumNumbers = () => {};
+export const snake_case = (string) => string.replace(/_/g, " ");
 
-// console.log(`Exercice 16 : `, sumNumbers([1, 2, 3]));
+console.log(`Exercice 16 : `, snake_case("Bonjour_c'est_papy"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 17
@@ -183,12 +193,12 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en deux paramètres qui sont deux tableaux de string et qui doit retourner un tableau avec tout les éléments des deux tableaux.
 // Exemple : ["Hello", "World"] et ["Test", "Salut"] => ["Hello", "World", "Test", "Salut"]
 
-// export const mergeArrays = () => {};
+export const mergeArrays = (array1, array2) =>  array1.concat(array2);
 
-// console.log(
-// 	`Exercice 17 : `,
-// 	mergeArrays(["Hello", "World"], ["Test", "Example"]),
-// );
+console.log(
+	`Exercice 17 : `,
+	mergeArrays(["Hello", "World"], ["Test", "Example"]),
+);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 18
@@ -196,12 +206,22 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de string et qui doit retourner toutes les strings qui ont la lettre "e".
 // Exemple : ["Poulet", "Chat", "Chien", "Cheval"] => ["Poulet", "Chien", "Cheval"].
 
-// export const filterStringsWithE = () => {};
-
-// console.log(
-// 	`Exercice 18 : `,
-// 	filterStringsWithE(["Poulet", "Chat", "Chien", "Cheval"]),
-// );
+export const filterStringsWithE = (array) => {
+    const result = []
+    
+    array.map((a) => {
+    
+    if (a.includes("e")) {
+        result.push(a)
+    }
+    
+})
+return result
+}
+console.log(
+	`Exercice 18 : `,
+	filterStringsWithE(["Poulet", "Chat", "Chien", "Cheval"]),
+);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 19
@@ -209,9 +229,19 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau de nombres et qui doit retourner tous les nombres qui sont pairs par ordre croissant.
 // Exemple : [2, 9, 6, 5, 6] => [2, 6, 6].
 
-// export const filterAndSortEvenNumbers = () => {};
+export const filterAndSortEvenNumbers = (array) => {
+    const result = []
 
-// console.log(`Exercice 19 : `, filterAndSortEvenNumbers([2, 9, 6, 5, 6]));
+    array.map((nb) => {
+        if (nb % 2 === 0){
+            result.push(nb)
+        }
+    })
+
+    return result.sort((a,b) => a - b)
+};
+
+console.log(`Exercice 19 : `, filterAndSortEvenNumbers([2, 9, 6, 5, 6]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 20
@@ -221,12 +251,12 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // findShort("Prachett is the best author in the world") // 2
 // findShort("The quick brown fox jumps over the lazy dog") // 3
 
-// export const findShort = () => {};
+export const findShort = (string) => string.split(" ").sort((a,b) => a.length - b.length)[0].length
 
-// console.log(
-// 	`Exercice 20 : `,
-// 	findShort("Prachett is the best author in the world"),
-// );
+console.log(
+	`Exercice 20 : `,
+	findShort("Prachett is the best author in the world"),
+);
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 21
@@ -235,9 +265,9 @@ console.log(`Exercice 10 : `, getStringRotations("Hello"));
 // Deux chaînes sont des anagrammes si elles contiennent les mêmes caractères, quel que soit l'ordre.
 // Exemple : anagram("listen", "silent") // true
 
-// export const anagram = () => {};
+export const anagram = (string1 , string2) => string1.split("").sort().join("") === string2.split("").sort().join("");
 
-// console.log(`Exercice 21 : `, anagram("listen", "silent"));
+console.log(`Exercice 21 : `, anagram("listen", "silent"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 22

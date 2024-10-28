@@ -62,6 +62,74 @@ describe("Algos Tests", () => {
 			args: ["12345"],
 			expected: ["23451", "34512", "45123", "51234", "12345"],
 		},
+        {
+			func: algos.incrementArray,
+			name: "incrementArray",
+			args: [[5, 6, 7]],
+			expected: [6, 7, 8],
+		},
+        {
+			func: algos.getLengths,
+			name: "getLengths",
+			args: [["Vive","le","poulet"]],
+			expected: [4, 2, 6],
+		},
+        {
+			func: algos.getFirstLetters,
+			name: "getFirstLetters",
+			args: [["Vive","le","poulet"]],
+			expected: ["V", "l", "p"],
+		},
+        {
+			func: algos.getLastLetters,
+			name: "getLastLetters",
+			args: [["Vive","le","poulet"]],
+			expected: ["e", "e", "t"],
+		},
+        {
+			func: algos.filterLongStrings,
+			name: "filterLongStrings",
+			args: [["Vive","le","poulet","et","les","sardines"]],
+			expected: ["poulet", "sardines"],
+		},
+        {
+			func: algos.snake_case,
+			name: "snake_case",
+			args: ["Je_serai_tenté_de_te_donner_un_dé_à_coudre"],
+			expected: "Je serai tenté de te donner un dé à coudre",
+		},
+        {
+			func: algos.mergeArrays,
+			name: "mergeArrays",
+			args: [["Vive","le","poulet"] ,["et","les","sardines"]],
+			expected: ["Vive", "le", "poulet", "et", "les", "sardines"],
+		},
+        {
+			func: algos.filterStringsWithE,
+			name: "filterStringsWithE",
+			args: [["Veau" , "Poussin" , "Ornithorynque", "Loutre"]],
+			expected: ["Veau", "Ornithorynque", "Loutre"],
+		},
+        {
+			func: algos.filterAndSortEvenNumbers,
+			name: "filterAndSortEvenNumbers",
+			args: [[2,7,8,9,4,1,3,7,5,12]],
+			expected: [2,4,8,12],
+		},
+        {
+			func: algos.findShort,
+			name: "findShort",
+			args: ["Ce n'est rien de mourir, c'est affreux de ne pas vivre"],
+			expected: 2,
+		},
+        {
+			func: algos.anagram,
+			name: "anagram",
+			args: ["manoir","romain"],
+			expected: true,
+		},
+        
+        
 	];
 
 	testCases.forEach(({ func, name, args, expected }) => {
