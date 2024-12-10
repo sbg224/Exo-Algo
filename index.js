@@ -8,9 +8,11 @@
 // Ajuste la fonction "multiply" qui prend deux paramètres (a et b) et retourne la somme multipliée des deux paramètres.
 // Exemple : a = 2, b = 3 => 2 * 3 = 6
 
-export const multiply = (a, b) => {};
+// export const multiply = (num1, num2) => {
+//     return num1 * num2 ;
+// };
 
-console.info("Exercice 1 :", multiply(2, 3));
+// console.info("Exercice 1 :", multiply(2, 3));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 2
@@ -18,9 +20,17 @@ console.info("Exercice 1 :", multiply(2, 3));
 // Ajuste la fonction qui prend en paramètre un tableau et qui retourne le premier élément du tableau.
 // Exemple : [1, 2, 3] => 1
 
-// export const getFirstElement = () => {}
+// export const getFirstElement = (tableau) => {
+//     // Vérifie que le paramètre est un tableau et qu'il contient au moins un élément
+//     if (Array.isArray(tableau) && tableau.length > 0) {
+//         return tableau[0]; // Retourne le premier élément
+//     }
+//         return "Le tableau est vide ou invalide"; // Gère les cas incorrects
+    
+// };
 
-// console.info("Exercice 2 : ", getFirstElement([1, 2, 3]));
+
+// console.info("Exercice 2 : ", getFirstElement([1, 2, 3, 4, 5, 6]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
@@ -28,10 +38,15 @@ console.info("Exercice 1 :", multiply(2, 3));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit supprimer le dernier élément du tableau.
 // Exemple : [1, 2, 3] => [1, 2]
 
-// export const removeLastElement = () => {
+// export const removeLastElement = (tableau) => {
+//     if (Array.isArray(tableau)){
+//        tableau.pop()
+//     }
+//     return tableau
+
 // };
 
-// console.info("Exercice 3 : ", removeLastElement([1, 2, 3]));
+// console.info("Exercice 3 : ", removeLastElement([1, 2, 3, 4]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 4
@@ -39,7 +54,13 @@ console.info("Exercice 1 :", multiply(2, 3));
 // Ajuste la fonction qui prend en paramètre un tableau comprennant des nombres et qui doit retourner la somme de tous les nombres du tableau.
 // Exemple : [1, 2, 3] => 6
 
-// export const sumArray = () => {}
+// export const sumArray = (tab) => {
+// let result = 0 
+// for(let i=0; i< tab.length; i++){
+//     result += tab[i]
+// }
+// return result;
+// }
 
 // console.info("Exercice 4 : ", sumArray([5, 6, 7]));
 
@@ -49,7 +70,10 @@ console.info("Exercice 1 :", multiply(2, 3));
 //Ajuste la fonction qui prend en paramètre une string et qui doit retourner la string inversée.
 // Exemple : "Hello" => "olleH"
 
-// export const reverseString = () => {}
+// export const reverseString = (str) => {
+//     return str.split('').reverse().join('');
+// };
+
 
 // console.info("Exercice 5 : ", reverseString("Hello"));
 
@@ -59,7 +83,16 @@ console.info("Exercice 1 :", multiply(2, 3));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit retourner le plus grand nombre du tableau.
 // Exemple : [1, 2, 3] => 3
 
-// export const getMax = () => {}
+// export const getMax = (tab) => {
+//     let maxTab = [0]
+
+//     for(let i=0 ; i< tab.length; i++){
+//         if (tab[i]> maxTab){
+//             maxTab = tab[i]
+//         }
+//     }
+//     return maxTab
+// }
 
 // console.info("Exercice 6 : ", getMax([1, 2, 3]));
 
@@ -69,7 +102,15 @@ console.info("Exercice 1 :", multiply(2, 3));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit retourner le plus petit nombre du tableau.
 // Exemple : [1, 2, 3] => 1
 
-// export const getMin = () => {}
+// export const getMin = (tab) => {
+//     let lePlusPetit = tab[0]
+//     for (let i =0; i<tab.length; i++){
+//         if (tab[i] < lePlusPetit){
+//         lePlusPetit = tab[i]
+//         }
+//     }
+//     return lePlusPetit;
+// }
 
 // console.info("Exercice 7 : ", getMin([1, 2, 3]));
 
@@ -79,7 +120,16 @@ console.info("Exercice 1 :", multiply(2, 3));
 // Ajuste la fonction qui prend en paramètre une string et qui doit retourner la string sans les voyelles.
 // Exemple : "Hello" => "Hll"
 
-// export const removeVowels = () => {}
+// export const removeVowels = (str) => {
+//     let result = '';
+//     for (let i = 0; i < str.length; i++) {
+//         const char = str[i];
+//         if (!'aeiouAEIOU'.includes(char)) {
+//             result += char;
+//         }
+//     }
+//     return result;
+// }
 
 // console.info("Exercice 8 : ", removeVowels("Hello"));
 
@@ -89,9 +139,12 @@ console.info("Exercice 1 :", multiply(2, 3));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit retourner le tableau trié par ordre croissant.
 // Exemple : [1, 3, 2] => [1, 2, 3]
 
-// export const sortArray = () => {}
+export const sortArray = (tab) => {
+    tab.sort((a,b) => b - a );
+    return tab
+}
 
-// console.info("Exercice 9 : ", sortArray([1, 3, 2]));
+console.info("Exercice 9 : ", sortArray([5, 3, 1, 2]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 10
